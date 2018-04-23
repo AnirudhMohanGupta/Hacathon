@@ -17,7 +17,7 @@ public class Order {
     @Column(name = "drug")
     private String drug;
 
-    @Column(name="status")
+    @Column(name = "status")
     private Integer status;
 
 

@@ -5,6 +5,7 @@ import com.cerner.pharmassist.dbservice.model.Orders;
 import com.cerner.pharmassist.dbservice.repository.OrdersRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,21 +24,28 @@ public class DbServiceResource {
 
         return getOrdersByPatientName(patientname);
     }
+
     @GetMapping("/pending")
-    public List<Order> getAllOrders() {
+    public List<String> getAllOrders() {
 
         return getAllPatient();
     }
 
-    private List<Order> getAllPatient() {
-        return ordersRepository.findAllByStatus(0);
+    private List<String> getAllPatient() {
+        List<Order> o=  ordersRepository.findAllByStatus(0);
+        List<String> s= new ArrayList<>();
+        for (Order order:o
+             ) {
+            s.add(order.getPatientName()+" : "+order.getDrug());
+        }
+        return s;
     }
 
     @PostMapping("/add")
     public List<String> add(@RequestBody final Orders orders) {
         orders.getDrugs()
                 .stream()
-                .map(order -> new Order(orders.getPatientName(), order,0))
+                .map(order -> new Order(orders.getPatientName(), order, 0))
                 .forEach(order -> ordersRepository.save(order));
         return getOrdersByPatientName(orders.getPatientName());
     }
@@ -60,15 +68,13 @@ public class DbServiceResource {
                 .collect(Collectors.toList());
     }
 
-    @PutMapping("/updateorder/{patientname}")
-
-        public List<String> update(@RequestBody final Orders orders) {
-            orders.getDrugs()
-                    .stream()
-                    .map(order -> new Order(orders.getPatientName(), order,0))
-                    .forEach(order -> ordersRepository.save(order));
-            return getOrdersByPatientName(orders.getPatientName());
-
+    @PutMapping(value = "/updateorder")
+    public List<String> update(@RequestParam("patientname") String patientName, @RequestParam("drug") String drug) {
+        System.out.println("fffffffffffffffff:" + patientName + "\n yuyuyu" + drug);
+        Integer id = ordersRepository.findId(patientName, drug).iterator().next().getId();
+        System.out.println(id);
+        ordersRepository.updateStatus(id);
+        return getOrdersByPatientName(patientName);
     }
 
 }

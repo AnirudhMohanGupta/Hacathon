@@ -20,7 +20,7 @@ public class Orders {
     public Orders(String patientName, List<String> drugs) {
         this.patientName = patientName;
         this.drugs = drugs;
-        this.isProcessed = false;
+        this.status = 0;
     }
 
     public String getPatientName() {
