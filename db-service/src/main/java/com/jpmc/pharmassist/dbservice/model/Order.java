@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.dbservice.model;
+package com.jpmc.pharmassist.dbservice.model;
 
 import javax.persistence.*;
 

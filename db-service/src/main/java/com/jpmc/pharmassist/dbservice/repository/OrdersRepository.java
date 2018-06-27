@@ -1,6 +1,6 @@
-package com.cerner.pharmassist.dbservice.repository;
+package com.jpmc.pharmassist.dbservice.repository;
 
-import com.cerner.pharmassist.dbservice.model.Order;
+import com.jpmc.pharmassist.dbservice.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
