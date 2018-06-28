@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.pharmaService;
+package com.jpmc.pharmassist.pharmaService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

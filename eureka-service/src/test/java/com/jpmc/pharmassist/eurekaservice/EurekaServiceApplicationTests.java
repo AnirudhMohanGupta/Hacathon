@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.eurekaservice;
+package com.jpmc.pharmassist.eurekaservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

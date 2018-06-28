@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.eurekaservice;
+package com.jpmc.pharmassist.eurekaservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

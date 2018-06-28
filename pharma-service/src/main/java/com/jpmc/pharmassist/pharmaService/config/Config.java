@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.pharmaService.config;
+package com.jpmc.pharmassist.pharmaService.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

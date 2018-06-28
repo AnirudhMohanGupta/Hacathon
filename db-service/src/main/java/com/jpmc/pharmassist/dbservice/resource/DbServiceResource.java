@@ -1,8 +1,8 @@
-package com.cerner.pharmassist.dbservice.resource;
+package com.jpmc.pharmassist.dbservice.resource;
 
-import com.cerner.pharmassist.dbservice.model.Order;
-import com.cerner.pharmassist.dbservice.model.Orders;
-import com.cerner.pharmassist.dbservice.repository.OrdersRepository;
+import com.jpmc.pharmassist.dbservice.model.Order;
+import com.jpmc.pharmassist.dbservice.model.Orders;
+import com.jpmc.pharmassist.dbservice.repository.OrdersRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

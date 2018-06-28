@@ -1,4 +1,4 @@
-package com.cerner.pharmassist.pharmaService.resource;
+package com.jpmc.pharmassist.pharmaService.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
